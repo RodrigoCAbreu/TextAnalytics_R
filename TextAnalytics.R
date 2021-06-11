@@ -1,10 +1,4 @@
-# Mini-Projeto 5 - Text Analytics Para Analisar a Reação do Mercado Sobre as Notícias de Uma Empresa
-
-# Leia o manual em pdf no Capítulo 12 com a descrição do projeto
-
-# Diretório de Trabalho
-setwd("~/Dropbox/DSA/Business-Analytics2.0/Cap12/R")
-getwd()
+# Text Analytics Para Analisar a Reação do Mercado Sobre as Notícias de Uma Empresa
 
 # Pacotes
 library(tm)
@@ -24,7 +18,7 @@ library(wordcloud)
 library(igraph)
 library(ggraph)
 
-########## Extração dos Dados de Texto via Web Scraping ##########
+##### Extração dos Dados de Texto via Web Scraping
 
 # Web Scraping do site do New York Times
 ?read_html
@@ -131,7 +125,7 @@ View(tokens_timemag)
 
 # Histogramas de Frequência
 
-# Vamos verificar quais palavras aparecem com mais frequência
+# Verificar quais palavras aparecem com mais frequência
 
 hist_nytimes <- df_nytimes %>%
   unnest_tokens(word, text) %>%
@@ -502,8 +496,7 @@ top_termos %>%
   facet_wrap(~ topic, scales = "free") + 
   coord_flip()
 
-# Conclusão: Não há evidência que demonstre reação positiva ou negativa do mercado com relação aos artigos
-# analisados. O objetivo principal dos artigos parece estar em prover informação mantendo um tom neutro
+# Conclusão: Não há evidência que demonstre reação positiva ou negativa com relação aos artigos
 
 
 
